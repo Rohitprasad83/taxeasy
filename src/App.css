@@ -137,6 +137,7 @@ table {
     --light-bg: #EFF0F3;
     --dark-bg: #0D0D0D;
     --white: #FFFFFE;
+    font-family: 'Roboto', sans-serif;
 }
 
 .primary-btn {
