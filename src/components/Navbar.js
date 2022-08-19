@@ -28,8 +28,8 @@ function Navbar() {
         )}
       </div>
       {showNavbar && (
-        <div className="flex flex-col gap-6 justify-center absolute top-48 w-full h-full border-4 mt-8 bg-white-bg border-solid border-2 md:hidden">
-          <div className="cursor-pointer inline px-4 hover:underline text-2xl w-max">
+        <div className="flex flex-col gap-6 fixed top-20 w-full pt-8 h-full bg-white-bg md:hidden z-10">
+          <div className="cursor-pointer px-4 hover:underline text-2xl w-max">
             Search
           </div>
           <div className="cursor-pointer px-4 hover:underline text-2xl w-max">
