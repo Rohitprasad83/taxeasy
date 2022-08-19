@@ -200,6 +200,57 @@ function MainContent() {
           <img src={demo} alt="get started" />
         </div>
       </section>
+
+      <section className="px-2 md:px-16 md:my-8">
+        <h1 className="text-2xl text-center font-bold my-4 md:text-4xl md:mt-32 md:mb-16">
+          Frequently Asked Questions
+        </h1>
+        <div className="my-4">
+          <p className="text-xl font-medium md:text-2xl">
+            Lorem ipsum dolor sit amet?
+          </p>
+          <p className="text-md mt-2 md:text-xl">
+            lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            inventore alias qui quae mollitia molestiae quasi, nesciunt
+            temporibus voluptatibus perspiciatis.
+          </p>
+        </div>
+
+        <div className="my-4">
+          <p className="text-xl font-medium md:text-2xl">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit?
+          </p>
+          <p className="text-md mt-2 md:text-xl">
+            lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus
+            nemo dolor facilis, quas neque nihil debitis corrupti, natus sunt
+            dolores quos quo placeat sit excepturi.
+          </p>
+        </div>
+
+        <div className="my-4">
+          <p className="text-xl font-medium md:text-2xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+            laudantium?
+          </p>
+          <p className="text-md mt-2 md:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ipsam
+            mollitia omnis dicta aut aliquam reprehenderit minima ab?
+          </p>
+        </div>
+
+        <div className="my-4">
+          <p className="text-xl font-medium md:text-2xl">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+            consectetur facere quis facilis consequuntur dicta?
+          </p>
+          <p className="text-md mt-2 md:text-xl">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+            eveniet animi odio explicabo rerum. Quae hic earum neque numquam
+            doloribus eaque odio ab deserunt quas eveniet, ad accusamus odit.
+            Qui.
+          </p>
+        </div>
+      </section>
     </div>
   )
 }
