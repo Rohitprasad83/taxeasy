@@ -3,63 +3,17 @@ import demo from 'assets/images/demo.svg'
 function MainContent() {
   return (
     <div className="mt-24 static z-0">
-      <h1 className="text-3xl md:text-4xl text-center text-dark-bg mt-8">
+      <h1 className="text-3xl md:text-4xl text-center text-dark-bg mt-32">
         Save Time, Save Money
       </h1>
 
-      <h2 className="text-2xl underline md:text-3xl text-center text-dark-bg mt-8">
-        Customer Reviews
-      </h2>
-      <section className="flex w-full h-max gap-4 m-4 flex-wrap justify-center ">
-        <div className="w-64 border-2 h-max border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg pb-8">
-          <img
-            src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            alt="image1"
-            className="w-32 rounded-full h-32 mx-auto mt-4"
-          />
-          <div className="p-2 pt-4 w-64 h-max">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
-            perferendis voluptate expedita cumque. Veritatis, voluptates at.
-          </div>
-        </div>
-        <div className="w-64 border-2 border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg">
-          <img
-            src="https://images.unsplash.com/photo-1622038094167-a2e40e21df17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-            alt="image2"
-            className="w-32 rounded-full h-32 mx-auto mt-4"
-          />
-          <p className="p-2 pt-4 w-64 h-max">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
-            perferendis voluptate expedita cumque. Veritatis, voluptates at.
-          </p>
-        </div>
-        <div className="w-64 border-2 border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg">
-          <img
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            alt="image1"
-            className="w-32 rounded-full h-32 mx-auto mt-4"
-          />
-          <p className="p-2 pt-4 w-64 h-max">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
-            perferendis voluptate expedita cumque. Veritatis, voluptates at.
-          </p>
-        </div>
-        <div className="w-64 border-2 border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg">
-          <img
-            src="https://images.unsplash.com/photo-1619380061814-58f03707f082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            alt="image4"
-            className="w-32 rounded-full h-32 mx-auto mt-4"
-          />
-          <p className="p-2 pt-4 w-64 h-max">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
-            perferendis voluptate expedita cumque. Veritatis, voluptates at.
-          </p>
-        </div>
-      </section>
+      <div className="flex gap-4 justify-center my-8">
+        <button className="primary-btn py-4 px-6 rounded">Get Started</button>
+        <button className="primary-btn-outlined py-4 px-6 rounded">
+          Request a Demo
+        </button>
+      </div>
+
       {/* Pricing  */}
       <h2 className="text-2xl underline md:text-3xl text-center text-dark-bg mt-8">
         Pricing
@@ -179,6 +133,60 @@ function MainContent() {
               <i className="fa-solid fa-check ml-auto mr-8 green-icon text-xl"></i>
             </div>
           </div>
+        </div>
+      </section>
+
+      <h2 className="text-2xl underline md:text-3xl text-center text-dark-bg mt-8">
+        Customer Reviews
+      </h2>
+      <section className="flex w-full h-max gap-4 m-4 flex-wrap justify-center ">
+        <div className="w-64 border-2 h-max border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg pb-8">
+          <img
+            src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+            alt="image1"
+            className="w-32 rounded-full h-32 mx-auto mt-4"
+          />
+          <div className="p-2 pt-4 w-64 h-max">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
+            perferendis voluptate expedita cumque. Veritatis, voluptates at.
+          </div>
+        </div>
+        <div className="w-64 border-2 border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg">
+          <img
+            src="https://images.unsplash.com/photo-1622038094167-a2e40e21df17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="image2"
+            className="w-32 rounded-full h-32 mx-auto mt-4"
+          />
+          <p className="p-2 pt-4 w-64 h-max">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
+            perferendis voluptate expedita cumque. Veritatis, voluptates at.
+          </p>
+        </div>
+        <div className="w-64 border-2 border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg">
+          <img
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            alt="image1"
+            className="w-32 rounded-full h-32 mx-auto mt-4"
+          />
+          <p className="p-2 pt-4 w-64 h-max">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
+            perferendis voluptate expedita cumque. Veritatis, voluptates at.
+          </p>
+        </div>
+        <div className="w-64 border-2 border-light-bg rounded-sm border-solid drop-shadow-xl bg-light-bg">
+          <img
+            src="https://images.unsplash.com/photo-1619380061814-58f03707f082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            alt="image4"
+            className="w-32 rounded-full h-32 mx-auto mt-4"
+          />
+          <p className="p-2 pt-4 w-64 h-max">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+            laboriosam rem consequatur vel aliquid excepturi ab quia asperiores,
+            perferendis voluptate expedita cumque. Veritatis, voluptates at.
+          </p>
         </div>
       </section>
 

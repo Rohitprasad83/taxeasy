@@ -11,10 +11,10 @@ function Navbar() {
         <div className="cursor-pointer py-1 hover:underline"> Pricing </div>
         <div className="cursor-pointer py-1 hover:underline"> About us </div>
         <div className="cursor-pointer py-1 hover:underline"> Contact us </div>
-        <button className="cursor-pointer white-btn px-4 py-1 rounded">
+        <button className="cursor-pointer drop-shadow-md text-sm white-btn px-4 py-1 rounded">
           Login
         </button>
-        <button className="cursor-pointer primary-btn px-4 py-1 rounded">
+        <button className="cursor-pointer drop-shadow-md text-sm primary-btn px-4 py-1 rounded">
           Get Started
         </button>
       </div>

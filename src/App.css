@@ -145,6 +145,11 @@ table {
     color: var(--dark-bg)
 }
 
+.primary-btn-outlined {
+    color: var(--dark-bg);
+    border: 1px solid var(--primary);
+}
+
 .white-btn {
     background-color: var(--light-bg);
     color: var(--dark-bg)
