@@ -1,9 +1,10 @@
 import React from 'react'
-import { Navbar, Footer } from 'components/index'
+import { Navbar, Footer, MainContent } from 'components/index'
 function Homepage() {
   return (
     <div>
       <Navbar />
+      <MainContent />
       <Footer />
     </div>
   )
