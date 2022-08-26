@@ -166,3 +166,7 @@ table {
 .red-icon {
     color: red;
 }
+
+.inputDiv:focus-within {
+    border: 2px solid var(--primary);
+}
