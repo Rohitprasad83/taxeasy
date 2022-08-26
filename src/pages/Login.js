@@ -3,7 +3,14 @@ import React, { useState } from 'react'
 import loginSvg from 'assets/images/login.svg'
 function Login() {
   const [showPass, setShowPass] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
+  const handleLogin = e => {
+    e.preventDefault()
+    console.log(email)
+    console.log(password)
+  }
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -19,17 +26,21 @@ function Login() {
             <h1 className="text-3xl font-bold mt-4 md:text-4xl">
               Login to your account!
             </h1>
-            <form action="" className="m-4 flex flex-col gap-4 mb-20 mt-8">
+            <form className="m-4 flex flex-col gap-4 mb-20 mt-8">
               <input
                 type="text"
-                placeholder="Enter email"
+                placeholder="Enter username"
                 className="border-solid border-light-bg border-2 rounded px-4 py-2 outline-primary md:text-xl"
+                onChange={e => setEmail(e.target.value)}
+                value={email}
               />
               <div className="flex-1 border-solid border-light-bg border-2 p-0 flex items-center gap-2 outline-2 outline-primary inputDiv rounded md:text-xl">
                 <input
                   type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="px-4 py-2 w-full outline-0"
+                  onChange={e => setPassword(e.target.value)}
+                  value={password}
                 />
                 {showPass ? (
                   <i
@@ -46,7 +57,8 @@ function Login() {
               </div>
               <button
                 className="primary-btn py-3 rounded text-md font-bold"
-                type="submit">
+                type="submit"
+                onClick={e => handleLogin(e)}>
                 Login
               </button>
               <p>
