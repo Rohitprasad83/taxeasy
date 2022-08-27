@@ -1,5 +1,5 @@
-import { Navbar, Footer } from 'components'
 import React, { useState } from 'react'
+import { Navbar, Footer } from 'components'
 import loginSvg from 'assets/images/login.svg'
 function Login() {
   const [showPass, setShowPass] = useState(false)
@@ -8,8 +8,6 @@ function Login() {
 
   const handleLogin = e => {
     e.preventDefault()
-    console.log(email)
-    console.log(password)
   }
   return (
     <div className="flex flex-col min-h-screen">
