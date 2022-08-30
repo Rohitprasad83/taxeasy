@@ -1,12 +1,13 @@
 import './App.css'
-import { Homepage, Login, Register } from 'pages/'
+import { Homepage, Login, Register, Profile } from 'pages/'
 
 function App() {
   return (
     <div>
       {/* <Homepage /> */}
       {/* <Login /> */}
-      <Register />
+      {/* <Register /> */}
+      <Profile />
     </div>
   )
 }
