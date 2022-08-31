@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
-
+import { logout } from 'features/auth/authSlice'
+import { useSelector, useDispatch } from 'react-redux'
 function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false)
-
+  const { token } = useSelector(state => state.auth)
+  const dispatch = useDispatch()
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
   return (
     <div className="navbar-background flex h-20 justify-between items-center bg-white-bg fixed top-0 left-0 right-0 md:text-2xl z-10">
       <div className="font-bold ml-8 cursor-pointer text-3xl"> TaxEasy </div>
@@ -11,9 +16,17 @@ function Navbar() {
         <div className="cursor-pointer py-1 hover:underline"> Pricing </div>
         <div className="cursor-pointer py-1 hover:underline"> About us </div>
         <div className="cursor-pointer py-1 hover:underline"> Contact us </div>
-        <button className="cursor-pointer drop-shadow-md text-sm white-btn px-4 py-1 rounded">
-          Login
-        </button>
+        {token ? (
+          <button
+            className="cursor-pointer drop-shadow-md text-sm white-btn px-4 py-1 rounded"
+            onClick={() => logoutHandler()}>
+            Logout
+          </button>
+        ) : (
+          <button className="cursor-pointer drop-shadow-md text-sm white-btn px-4 py-1 rounded">
+            Login
+          </button>
+        )}
         <button className="cursor-pointer drop-shadow-md text-sm primary-btn px-4 py-1 rounded">
           Get Started
         </button>
@@ -42,9 +55,17 @@ function Navbar() {
             Contact us
           </div>
           <div className="flex gap-2 justify-evenly px-8">
-            <button className="cursor-pointer white-btn px-4 py-4 rounded flex-grow">
-              Login
-            </button>
+            {token ? (
+              <button
+                className="cursor-pointer white-btn px-4 py-4 rounded flex-grow"
+                onClick={() => logoutHandler()}>
+                Logout
+              </button>
+            ) : (
+              <button className="cursor-pointer white-btn px-4 py-4 rounded flex-grow">
+                Login
+              </button>
+            )}
             <button className="cursor-pointer primary-btn px-4 py-4 rounded flex-grow">
               Get Started
             </button>
