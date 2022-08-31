@@ -12,12 +12,12 @@ function Profile() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="mt-20 text-center w-full">
-        <div className="bg-light-bg w-32 h-32 rounded-full mx-auto mt-8">
+        <div className="bg-light-bg w-48 h-48 rounded-full mx-auto mt-8">
           {file && (
             <img
               src={file}
               alt="file"
-              className="w-32 h-32 rounded-full mx-auto"
+              className="w-48 h-48 rounded-full mx-auto"
             />
           )}
         </div>
