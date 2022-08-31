@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { Navbar, Footer } from 'components'
 import loginSvg from 'assets/images/login.svg'
+import { loginHandler } from 'features/auth/authSlice'
+import { useDispatch } from 'react-redux'
 function Login() {
   const [showPass, setShowPass] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
 
   const handleLogin = e => {
-    e.preventDefault()
+    const username = email
+    dispatch(loginHandler({ e, username, password }))
   }
   return (
     <div className="flex flex-col min-h-screen">

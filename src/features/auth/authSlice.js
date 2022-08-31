@@ -14,14 +14,15 @@ export const loginHandler = createAsyncThunk(
         e.preventDefault()
         if (username && password) {
             try {
-                const response = await axios.post(
-                    'http://54.208.4.29:8000/user/login/', {
+                const response = await axios({
+                    method: 'post',
+                    url: 'http://54.208.4.29:8000/user/login/',
+                    data: {
                         username,
                         password,
-                    }
-                )
-                console.log(response)
-                return response
+                    },
+                })
+                return response.data.jwt
             } catch (err) {
                 return rejectWithValue(err)
             }
@@ -46,9 +47,8 @@ export const authSlice = createSlice({
         [loginHandler.fulfilled]: (state, { payload }) => {
             state.loading = false
             state.error = false
-            state.token = payload.jwt
-            console.log(payload)
-            Cookies.set('token', payload.jwt)
+            state.token = payload
+            Cookies.set('token', payload)
         },
         [loginHandler.rejected]: (state, { payload }) => {
             state.error = true

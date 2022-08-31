@@ -4,10 +4,7 @@ import { Homepage, Login, Register, Profile } from 'pages/'
 function App() {
   return (
     <div>
-      {/* <Homepage /> */}
-      {/* <Login /> */}
-      {/* <Register /> */}
-      <Profile />
+      {/* <Homepage /> */} <Login /> {/* <Register /> */} {/* <Profile /> */}{' '}
     </div>
   )
 }
