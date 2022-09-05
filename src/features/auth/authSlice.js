@@ -16,7 +16,7 @@ export const loginHandler = createAsyncThunk(
             try {
                 const response = await axios({
                     method: 'post',
-                    url: 'http://54.208.4.29:8000/user/login/',
+                    url: 'http://192.168.29.201:8001/users/login/',
                     data: {
                         username,
                         password,
