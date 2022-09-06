@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Navbar, Footer } from 'components'
 import signupSvg from 'assets/images/signup.svg'
+import { Link } from 'react-router-dom'
 
 function Register() {
   const [showPass, setShowPass] = useState(false)
@@ -77,10 +78,10 @@ function Register() {
                 type="submit">
                 Create Account
               </button>
-              <p>
-                Already Registered?{' '}
-                <span className="font-bold cursor-pointer">Login</span>
-              </p>
+              <Link to="/login">
+                Already Registered ?
+                <span className="font-bold cursor-pointer"> Login </span>
+              </Link>
             </form>
           </div>
         </main>

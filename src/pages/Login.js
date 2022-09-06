@@ -3,6 +3,7 @@ import { Navbar, Footer } from 'components'
 import loginSvg from 'assets/images/login.svg'
 import { loginHandler } from 'features/auth/authSlice'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 function Login() {
   const [showPass, setShowPass] = useState(false)
   const [email, setEmail] = useState('')
@@ -63,10 +64,10 @@ function Login() {
                 onClick={e => handleLogin(e)}>
                 Login
               </button>
-              <p>
+              <Link to="/register">
                 Don't have an account?{' '}
                 <span className="font-bold cursor-pointer">Sign up </span>
-              </p>
+              </Link>
             </form>
           </div>
         </main>
