@@ -174,3 +174,60 @@ table {
 .w-128px {
     width: 25px;
 }
+table, td, th,tr {
+    border: 2px solid;
+    align-self: center;
+    width: 50%;
+    margin-left:auto;
+    margin-right:auto;
+   
+  }
+  h1 {
+    text-align: center;
+    font-size: 40px;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 90%;
+}
+
+table{
+    width:50%;
+    text-align: center;
+}
+.pan
+{
+    text-transform: uppercase;
+}
+.error
+{
+    color: Red;
+    visibility: hidden;
+}
+.pan
+    {
+        text-transform: uppercase;
+    }
+    .error
+    {
+        color: Red;
+        visibility: hidden;
+    }
+.pan
+{
+    text-transform: uppercase;
+}
+.error
+{
+    color: Red;
+    visibility: hidden;
+}
+th{
+    font-weight: 900;
+    text-align: center;
+   
+}
+table{
+    text-align: left;; 
+}

@@ -1,10 +1,11 @@
 import './App.css'
 import { Homepage, Login, Register, Profile } from 'pages/'
-
+import { Form } from 'components'
 function App() {
   return (
     <div>
-      {/* <Homepage /> */} <Login /> {/* <Register /> */} {/* <Profile /> */}{' '}
+      {/* <Homepage /> */}{/* <Register /> */} {/* <Profile /> */}{' '} {/* <Form /> */}
+      <Form />
     </div>
   )
 }
