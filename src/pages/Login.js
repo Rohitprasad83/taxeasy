@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar, Footer } from 'components'
 import loginSvg from 'assets/images/login.svg'
 import { loginHandler } from 'features/auth/authSlice'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 function Login() {
   const [showPass, setShowPass] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
+  const { token } = useSelector(state => state.auth)
+  const navigate = useNavigate()
+  const location = useLocation()
+  useEffect(() => {
+    if (token) {
+      navigate(location.state?.from?.pathname ?? '/profile', { replace: true })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token])
 
   const handleLogin = e => {
     const username = email
