@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
 import { logout } from 'features/auth/authSlice'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false)
   const { token } = useSelector(state => state.auth)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const location = useLocation()
   const logoutHandler = () => {
     dispatch(logout())
+    navigate(location.state?.from?.pathname ?? '/login', { replace: true })
   }
   return (
     <div className="navbar-background flex h-20 justify-between items-center bg-white-bg fixed top-0 left-0 right-0 md:text-2xl z-10">
-      <div className="font-bold ml-8 cursor-pointer text-3xl"> TaxEasy </div>
+      <Link to="/" className="font-bold ml-8 cursor-pointer text-3xl">
+        {' '}
+        TaxEasy{' '}
+      </Link>
       <div className="mr-4 hidden md:text-xl md:gap-4 md:flex">
         <div className="cursor-pointer py-1 hover:underline"> Search </div>
         <div className="cursor-pointer py-1 hover:underline"> Pricing </div>
@@ -23,9 +30,11 @@ function Navbar() {
             Logout
           </button>
         ) : (
-          <button className="cursor-pointer drop-shadow-md text-sm white-btn px-4 py-1 rounded">
+          <Link
+            to="/login"
+            className="cursor-pointer drop-shadow-md text-sm white-btn px-4 py-1 rounded flex flex-col justify-center font-bold">
             Login
-          </button>
+          </Link>
         )}
         <button className="cursor-pointer drop-shadow-md text-sm primary-btn px-4 py-1 rounded">
           Get Started

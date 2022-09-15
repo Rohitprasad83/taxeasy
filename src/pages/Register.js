@@ -1,11 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar, Footer } from 'components'
 import signupSvg from 'assets/images/signup.svg'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { signUpHandler } from 'features/auth/authSlice'
 
 function Register() {
   const [showPass, setShowPass] = useState(false)
   const [showConfirmPass, setShowConfirmPass] = useState(false)
+  const [credentials, setCredentials] = useState({
+    name: '',
+    email: '',
+    pan: '',
+    phone: '',
+    password: '',
+    confirmPassword: '',
+  })
+  const dispatch = useDispatch()
+  const { token } = useSelector(state => state.auth)
+  const navigate = useNavigate()
+  const location = useLocation()
 
+  useEffect(() => {
+    if (token) {
+      navigate(location.state?.from?.pathname ?? '/profile', { replace: true })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token])
+
+  function changeHandler(e) {
+    return setCredentials({ ...credentials, [e.target.name]: e.target.value })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    dispatch(signUpHandler({ e, credentials }))
+  }
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -19,32 +49,49 @@ function Register() {
             <h1 className="text-3xl font-bold mt-4 md:text-4xl">
               Create your account
             </h1>
-            <form className="m-4 flex flex-col gap-4 mb-20 mt-8">
+            <form
+              onSubmit={handleSubmit}
+              className="m-4 flex flex-col gap-4 mb-20 mt-8">
               <input
                 type="text"
                 placeholder="Enter Full Name"
                 className="border-solid border-light-bg border-2 rounded px-4 py-2 outline-primary md:text-xl"
+                value={credentials.name}
+                onChange={e => changeHandler(e)}
+                name="name"
               />
               <input
                 type="email"
                 placeholder="Enter Email"
                 className="border-solid border-light-bg border-2 rounded px-4 py-2 outline-primary md:text-xl"
+                value={credentials.email}
+                onChange={e => changeHandler(e)}
+                name="email"
               />
               <input
                 type="text"
                 placeholder="Enter Phone Number"
                 className="border-solid border-light-bg border-2 rounded px-4 py-2 outline-primary md:text-xl"
+                value={credentials.phone}
+                onChange={e => changeHandler(e)}
+                name="phone"
               />
               <input
                 type="text"
                 placeholder="Enter Pan Card Number"
                 className="border-solid border-light-bg border-2 rounded px-4 py-2 outline-primary md:text-xl"
+                value={credentials.pan}
+                onChange={e => changeHandler(e)}
+                name="pan"
               />
               <div className="flex-1 border-solid border-light-bg border-2 p-0 flex items-center gap-2 outline-2 outline-primary inputDiv rounded md:text-xl">
                 <input
                   type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="px-4 py-2 w-full outline-0"
+                  value={credentials.password}
+                  onChange={e => changeHandler(e)}
+                  name="password"
                 />
                 {showPass ? (
                   <i
@@ -61,6 +108,9 @@ function Register() {
                   type={showConfirmPass ? 'text' : 'password'}
                   placeholder="Confirm Password"
                   className="px-4 py-2 w-full outline-0"
+                  value={credentials.confirmPassword}
+                  onChange={e => changeHandler(e)}
+                  name="confirmPassword"
                 />
                 {showConfirmPass ? (
                   <i
@@ -77,10 +127,10 @@ function Register() {
                 type="submit">
                 Create Account
               </button>
-              <p>
-                Already Registered?{' '}
-                <span className="font-bold cursor-pointer">Login</span>
-              </p>
+              <Link to="/login">
+                Already Registered ?
+                <span className="font-bold cursor-pointer"> Login </span>
+              </Link>
             </form>
           </div>
         </main>
