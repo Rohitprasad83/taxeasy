@@ -56,9 +56,9 @@ function Form() {
     <th>PAN of the Employee/Specified senior citizen</th>
   </tr>
   <tr>
-    <td><input name="txtPANCard" type="text" id="txtPANCard" class="pan"></input></td>
-    <td><input name="txtTANCard" type="text" id="txtTANCard" class="tan"></input></td>
-    <td><input name="txtPANCardofemployee" type="text" id="txtPANCard" class="pan"></input></td>
+    <td><input name="txtPANCard" type="text" id="txtPANCard" className="pan"></input></td>
+    <td><input name="txtTANCard" type="text" id="txtTANCard" className="tan"></input></td>
+    <td><input name="txtPANCardofemployee" type="text" id="txtPANCard" className="pan"></input></td>
   </tr>
   </table>
   <table>
@@ -69,7 +69,7 @@ function Form() {
     </tr>
     <tr>
       <td><input type="text" name="tds"></input></td>
-      <td><input type="year" name="assessmentyear"></input></td>
+      <td><input type="date" name="assessmentyear"></input></td>
       <td>
         <tr>
           <td><th>From</th><input type="date" name="datefrom"></input></td>

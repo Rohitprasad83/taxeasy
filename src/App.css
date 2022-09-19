@@ -175,6 +175,7 @@ table {
     width: 25px;
 }
 table, td, th,tr {
+    display: flexbox;
     border: 2px solid;
     align-self: center;
     width: 50%;
@@ -183,30 +184,25 @@ table, td, th,tr {
    
   }
   h1 {
+    display: flexbox;
     text-align: center;
     font-size: 40px;
 }
 h2{
+    display: flexbox;
     font-size: 30px;
     text-align: center;
     margin-left: 90%;
 }
 
 table{
+    display: flexbox;
     width:50%;
     text-align: center;
 }
 .pan
-{
-    text-transform: uppercase;
-}
-.error
-{
-    color: Red;
-    visibility: hidden;
-}
-.pan
     {
+        display: flexbox;
         text-transform: uppercase;
     }
     .error
@@ -214,20 +210,14 @@ table{
         color: Red;
         visibility: hidden;
     }
-.pan
-{
-    text-transform: uppercase;
-}
-.error
-{
-    color: Red;
-    visibility: hidden;
-}
+
 th{
+    display: flexbox;
     font-weight: 900;
     text-align: center;
    
 }
 table{
+    display: flexbox;
     text-align: left;; 
 }
