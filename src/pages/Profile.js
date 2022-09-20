@@ -34,6 +34,26 @@ function Profile() {
           className="hidden"
         />
       </div>
+      <div className="flex justify-center">
+        <div className="flex flex-col text-xl md:p-2 gap-2 mt-8 w-96 border-solid border-light-bg border-2 rounded-md">
+          <h2 className="text-xl">Name - Rohit Prasad</h2>
+          <p>Pan Card</p>
+          <p>Email id</p>
+          <p>Mobile Number</p>
+          <div className="flex gap-4 mt-4 justify-center">
+            <button
+              type="button"
+              className="primary-btn p-2 px-4 rounded text-sm drop-shadow-md font-bold">
+              Change Password
+            </button>
+            <button
+              type="button"
+              className="border-solid border-light-bg border-2 p-2 px-4 rounded text-sm drop-shadow-md font-bold bg-red-600">
+              Delete Account
+            </button>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   )

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, Footer } from 'components'
+import { Navbar, Footer, VerifyEmail } from 'components'
 import signupSvg from 'assets/images/signup.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUpHandler } from 'features/auth/authSlice'
-
 function Register() {
   const [showPass, setShowPass] = useState(false)
   const [showConfirmPass, setShowConfirmPass] = useState(false)
@@ -40,7 +39,9 @@ function Register() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <section className="mt-20 text-center flex w-full">
-        <aside className="hidden md:flex bg-red items-center md:w-1/3 pl-8">
+        <VerifyEmail />
+
+        {/* <aside className="hidden md:flex bg-red items-center md:w-1/3 pl-8">
           <img src={signupSvg} alt="Signup" className="hidden md:block" />
         </aside>
         <main className="text-center md:w-2/3 w-full">
@@ -133,7 +134,7 @@ function Register() {
               </Link>
             </form>
           </div>
-        </main>
+        </main> */}
       </section>
       <Footer />
     </div>

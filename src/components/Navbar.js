@@ -71,9 +71,11 @@ function Navbar() {
                 Logout
               </button>
             ) : (
-              <button className="cursor-pointer white-btn px-4 py-4 rounded flex-grow">
+              <Link
+                to="/login"
+                className="cursor-pointer white-btn px-4 py-4 rounded flex-grow text-center font-bold">
                 Login
-              </button>
+              </Link>
             )}
             <button className="cursor-pointer primary-btn px-4 py-4 rounded flex-grow">
               Get Started

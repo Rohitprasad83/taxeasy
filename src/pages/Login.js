@@ -56,11 +56,11 @@ function Login() {
                 />
                 {showPass ? (
                   <i
-                    className="fa-solid fa-eye mr-2"
+                    className="fa-solid fa-eye mr-2 cursor-pointer"
                     onClick={() => setShowPass(!showPass)}></i>
                 ) : (
                   <i
-                    className="fa-solid fa-eye-slash mr-2"
+                    className="fa-solid fa-eye-slash mr-2 cursor-pointer"
                     onClick={() => setShowPass(!showPass)}></i>
                 )}
               </div>
