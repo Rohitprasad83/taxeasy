@@ -27,7 +27,7 @@ function Login() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <section className="mt-20 text-center flex w-full">
-        <aside className="hidden md:flex bg-red items-center md:w-1/3 pl-8">
+        <aside className="hidden md:flex items-center md:w-1/3 pl-8">
           <img src={loginSvg} alt="login" className="hidden md:block" />
         </aside>
         <main className="text-center md:w-2/3 w-full">

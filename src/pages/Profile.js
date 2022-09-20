@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react'
-import { Navbar, Footer } from 'components'
+import { Navbar, Footer, Modal } from 'components'
 
 function Profile() {
   const [file, setFile] = useState(null)
   const hiddenFileInput = useRef(null)
+  const [openModal, setOpenModal] = useState(false)
 
   const handleInputClick = e => {
     hiddenFileInput.current.click()
@@ -43,17 +44,20 @@ function Profile() {
           <div className="flex gap-4 mt-4 justify-center">
             <button
               type="button"
-              className="primary-btn p-2 px-4 rounded text-sm drop-shadow-md font-bold">
+              className="primary-btn p-2 px-4 rounded text-sm drop-shadow-md"
+              onClick={() => setOpenModal('Change Password')}>
               Change Password
             </button>
             <button
               type="button"
-              className="border-solid border-light-bg border-2 p-2 px-4 rounded text-sm drop-shadow-md font-bold bg-red-600">
+              className="border-solid border-light-bg border-2 p-2 px-4 rounded text-sm drop-shadow-md bg-red"
+              onClick={() => setOpenModal('delete')}>
               Delete Account
             </button>
           </div>
         </div>
       </div>
+      {openModal && <Modal from={openModal} setOpenModal={setOpenModal} />}
       <Footer />
     </div>
   )
