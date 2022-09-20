@@ -14,7 +14,7 @@ function Modal({ from, setOpenModal }) {
             type="text"
             name="password"
             placeholder="Enter your password"
-            className="mt-4 p-1 border-solid border-dark-bg border-2 rounded"
+            className="mt-4 p-1 px-2 border-solid border-light-bg border-2 rounded"
           />
         ) : (
           <>
@@ -22,13 +22,13 @@ function Modal({ from, setOpenModal }) {
               type="text"
               name="oldPassword"
               placeholder="Enter your old password"
-              className="mt-4 p-1 border-solid border-dark-bg border-2 rounded"
+              className="mt-4 p-1 px-2 border-solid border-light-bg border-2 rounded"
             />
             <input
               type="text"
               name="newPassword"
               placeholder="Enter your new password"
-              className="mt-4 p-1 border-solid border-dark-bg border-2 rounded"
+              className="mt-4 p-1 px-2 border-solid border-light-bg border-2 rounded"
             />
           </>
         )}
@@ -41,7 +41,7 @@ function Modal({ from, setOpenModal }) {
           </button>
           <button
             type="button"
-            className="border-solid border-light-bg border-2 p-2 px-4 rounded text-sm drop-shadow-md bg-red flex-1">
+            className="p-2 px-4 rounded text-sm drop-shadow-md bg-red flex-1">
             {from === 'delete' ? 'Delete' : 'Save'}
           </button>
         </div>

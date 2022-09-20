@@ -187,7 +187,6 @@ table {
     left: 0;
     z-index: 1000;
     background-color: rgb(203 213 225);
-    opacity: 0.9;
     display: flex;
 }
 

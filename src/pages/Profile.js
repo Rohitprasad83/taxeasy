@@ -44,13 +44,13 @@ function Profile() {
           <div className="flex gap-4 mt-4 justify-center">
             <button
               type="button"
-              className="primary-btn p-2 px-4 rounded text-sm drop-shadow-md"
+              className="primary-btn p-2 px-4 rounded text-sm drop-shadow-md flex-1"
               onClick={() => setOpenModal('Change Password')}>
               Change Password
             </button>
             <button
               type="button"
-              className="border-solid border-light-bg border-2 p-2 px-4 rounded text-sm drop-shadow-md bg-red"
+              className="p-2 px-4 rounded text-sm drop-shadow-md bg-red flex-1"
               onClick={() => setOpenModal('delete')}>
               Delete Account
             </button>

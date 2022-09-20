@@ -4,6 +4,9 @@ import Cookies from 'js-cookie'
 
 const initialState = {
     token: Cookies.get('token') !== undefined ? Cookies.get('token') : null,
+    verifyEmail: Cookies.get('verifyEmail') !== undefined ?
+        Cookies.get('verifyEmail') :
+        null,
     loading: false,
     error: false,
 }
@@ -22,7 +25,6 @@ export const loginHandler = createAsyncThunk(
                         password,
                     },
                 })
-                console.log(response)
                 return response.data.jwt
             } catch (err) {
                 console.log(err)
@@ -52,7 +54,6 @@ export const signUpHandler = createAsyncThunk(
                         confirm_password: confirmPassword,
                     },
                 })
-                console.log(response)
                 return response.data.jwt
             } catch (err) {
                 console.log(err)
@@ -79,7 +80,6 @@ export const authSlice = createSlice({
         [loginHandler.fulfilled]: (state, { payload }) => {
             state.loading = false
             state.error = false
-            console.log(payload)
             state.token = payload
             Cookies.set('token', payload)
         },
