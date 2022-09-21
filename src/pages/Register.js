@@ -4,6 +4,8 @@ import signupSvg from 'assets/images/signup.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUpHandler } from 'features/auth/authSlice'
+import { Ring } from '@uiball/loaders'
+
 function Register() {
   const [showPass, setShowPass] = useState(false)
   const [showConfirmPass, setShowConfirmPass] = useState(false)
@@ -16,7 +18,9 @@ function Register() {
     confirmPassword: '',
   })
   const dispatch = useDispatch()
-  const { token, verifyEmail } = useSelector(state => state.auth)
+  const { token, verifyEmail, error, loading } = useSelector(
+    state => state.auth
+  )
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -64,6 +68,7 @@ function Register() {
                     value={credentials.name}
                     onChange={e => changeHandler(e)}
                     name="name"
+                    required
                   />
                   <input
                     type="email"
@@ -72,6 +77,7 @@ function Register() {
                     value={credentials.email}
                     onChange={e => changeHandler(e)}
                     name="email"
+                    required
                   />
                   <input
                     type="text"
@@ -80,6 +86,7 @@ function Register() {
                     value={credentials.phone}
                     onChange={e => changeHandler(e)}
                     name="phone"
+                    required
                   />
                   <input
                     type="text"
@@ -88,6 +95,7 @@ function Register() {
                     value={credentials.pan}
                     onChange={e => changeHandler(e)}
                     name="pan"
+                    required
                   />
                   <div className="flex-1 border-solid border-light-bg border-2 p-0 flex items-center gap-2 outline-2 outline-primary inputDiv rounded md:text-xl">
                     <input
@@ -97,6 +105,7 @@ function Register() {
                       value={credentials.password}
                       onChange={e => changeHandler(e)}
                       name="password"
+                      required
                     />
                     {showPass ? (
                       <i
@@ -116,6 +125,7 @@ function Register() {
                       value={credentials.confirmPassword}
                       onChange={e => changeHandler(e)}
                       name="confirmPassword"
+                      required
                     />
                     {showConfirmPass ? (
                       <i
@@ -131,10 +141,20 @@ function Register() {
                         }></i>
                     )}
                   </div>
+                  {error && (
+                    <div className="text-lg text-red font-bold text-left">
+                      {error}
+                    </div>
+                  )}
                   <button
-                    className="primary-btn py-3 rounded text-md font-bold"
-                    type="submit">
-                    Create Account
+                    className="primary-btn py-3 rounded text-md font-bold flex justify-center"
+                    type="submit"
+                    disabled={loading}>
+                    {loading ? (
+                      <Ring size={20} lineWeight={5} speed={1} color="black" />
+                    ) : (
+                      'Create Account'
+                    )}
                   </button>
                   <Link to="/login">
                     Already Registered ?

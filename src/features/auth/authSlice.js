@@ -27,8 +27,7 @@ export const loginHandler = createAsyncThunk(
                 })
                 return response.data.jwt
             } catch (err) {
-                console.log(err)
-                return rejectWithValue(err.message)
+                return rejectWithValue(err.response.data.message)
             }
         }
     }
@@ -56,8 +55,7 @@ export const signUpHandler = createAsyncThunk(
                 })
                 return response.data.jwt
             } catch (err) {
-                console.log(err)
-                return rejectWithValue(err.message)
+                return rejectWithValue(err.response.data.message)
             }
         }
     }
@@ -67,9 +65,12 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        logout: (state, action) => {
+        logout: state => {
             state.token = null
             Cookies.remove('token')
+        },
+        setError: state => {
+            state.error = false
         },
     },
     extraReducers: {
@@ -84,7 +85,7 @@ export const authSlice = createSlice({
             Cookies.set('token', payload)
         },
         [loginHandler.rejected]: (state, { payload }) => {
-            state.error = true
+            state.error = payload
             state.loading = false
         },
         [signUpHandler.pending]: state => {
@@ -98,12 +99,12 @@ export const authSlice = createSlice({
             Cookies.set('token', payload)
         },
         [signUpHandler.rejected]: (state, { payload }) => {
-            state.error = true
+            state.error = payload
             state.loading = false
         },
     },
 })
 
-export const { logout } = authSlice.actions
+export const { logout, setError } = authSlice.actions
 
 export default authSlice.reducer
