@@ -4,6 +4,8 @@ import loginSvg from 'assets/images/login.svg'
 import { loginHandler, setError } from 'features/auth/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Ring } from '@uiball/loaders'
+
 function Login() {
   const [showPass, setShowPass] = useState(false)
   const [email, setEmail] = useState('')
@@ -11,7 +13,7 @@ function Login() {
   const [errorCred, setErrorCred] = useState('')
 
   const dispatch = useDispatch()
-  const { token, error } = useSelector(state => state.auth)
+  const { token, error, loading } = useSelector(state => state.auth)
   const navigate = useNavigate()
   const location = useLocation()
   useEffect(() => {
@@ -64,6 +66,7 @@ function Login() {
                 className="border-solid border-light-bg border-2 rounded px-4 py-2 outline-primary md:text-xl"
                 onChange={e => setEmail(e.target.value)}
                 value={email}
+                required
               />
               <div className="flex-1 border-solid border-light-bg border-2 p-0 flex items-center gap-2 outline-2 outline-primary inputDiv rounded md:text-xl">
                 <input
@@ -72,6 +75,7 @@ function Login() {
                   className="px-4 py-2 w-full outline-0"
                   onChange={e => setPassword(e.target.value)}
                   value={password}
+                  required
                 />
                 {showPass ? (
                   <i
@@ -84,16 +88,23 @@ function Login() {
                 )}
               </div>
               {error && (
-                <div className="text-lg text-red font-bold">{error}</div>
+                <div className="text-lg text-red font-bold text-left">
+                  {error}
+                </div>
               )}
               <div className="border-solid border-b-2 border-light-bg w-max self-center cursor-pointer">
                 Having trouble signing in?
               </div>
               <button
-                className="primary-btn py-3 rounded text-md font-bold"
+                className="primary-btn py-3 rounded text-md font-bold flex justify-center"
                 type="submit"
-                onClick={e => handleLogin(e)}>
-                Login
+                onClick={e => handleLogin(e)}
+                disabled={loading}>
+                {loading ? (
+                  <Ring size={20} lineWeight={5} speed={1} color="black" />
+                ) : (
+                  'Login'
+                )}
               </button>
               <Link to="/register">
                 Don't have an account?{' '}
