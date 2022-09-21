@@ -1,6 +1,7 @@
 import './App.css'
 import { Homepage, Login, Register, Profile } from 'pages/'
 import { Routes, Route } from 'react-router-dom'
+import { PrivateRoute } from 'components'
 
 function App() {
   return (
@@ -9,8 +10,10 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/home" element={<Homepage />} />
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
     </div>
   )
