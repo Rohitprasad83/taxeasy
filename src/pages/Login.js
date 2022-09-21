@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar, Footer } from 'components'
 import loginSvg from 'assets/images/login.svg'
-import { loginHandler } from 'features/auth/authSlice'
+import { loginHandler, setError } from 'features/auth/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 function Login() {
   const [showPass, setShowPass] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errorCred, setErrorCred] = useState('')
+
   const dispatch = useDispatch()
-  const { token } = useSelector(state => state.auth)
+  const { token, error } = useSelector(state => state.auth)
   const navigate = useNavigate()
   const location = useLocation()
   useEffect(() => {
@@ -18,6 +20,23 @@ function Login() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
+
+  useEffect(() => {
+    if (error) {
+      setErrorCred({ email, password })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [error])
+
+  useEffect(() => {
+    if (
+      (error && email !== errorCred.email) ||
+      (error && password !== errorCred.password)
+    ) {
+      dispatch(setError())
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [email, password])
 
   const handleLogin = e => {
     const username = email
@@ -64,6 +83,9 @@ function Login() {
                     onClick={() => setShowPass(!showPass)}></i>
                 )}
               </div>
+              {error && (
+                <div className="text-lg text-red font-bold">{error}</div>
+              )}
               <div className="border-solid border-b-2 border-light-bg w-max self-center cursor-pointer">
                 Having trouble signing in?
               </div>
